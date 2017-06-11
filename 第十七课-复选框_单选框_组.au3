@@ -44,7 +44,7 @@ Func _main()
 			Case $Button1
 				$a = ""
 				For $i = 1 To UBound($Checkbox, 1) - 1
-					If GUICtrlRead($Checkbox[$i] = $GUI_CHECKED) Then
+					If GUICtrlRead($Checkbox[$i]) = $GUI_CHECKED Then
 						$a &= $i & " "
 					EndIf
 				Next
@@ -64,11 +64,11 @@ Func _xuanze($a)
 	Switch $a
 		Case 1
 			For $i = 1 To UBound($Checkbox, 1) - 1
-				GUISetState($Checkbox[$i], $gui_checked)
+				GUICtrlSetState($Checkbox[$i], $gui_checked)
 			Next
 		Case 2
 			For $i = 1 To UBound($checkbox, 1) - 1
-				If GUICtrlRead($Checkbox[$i] = $gui_checked) Then
+				If GUICtrlRead($Checkbox[$i]) = $gui_checked Then
 					GUICtrlSetState($Checkbox[$i], $gui_unchecked)
 				Else
 					GUICtrlSetState($Checkbox[$i], $gui_checked)
