@@ -12,7 +12,7 @@ Exit
 Func _main()
 	Local $Pic = 1
 	Local $pic_lujing = _pic_lu()
-	GUICtrlSetImage($Pic1, $pic_lujing[$Pic])
+	GUICtrlSetImage($Pic, $pic_lujing[$Pic])
 	GUISetState()
 
 	While 1
@@ -25,16 +25,16 @@ Func _main()
 					MsgBox(0, "", "图片为1")
 				Else
 					$Pic -= 1
-					GUICtrlSetImage($Pic1, "")
-					GUICtrlSetImage($Pic1, $pic_lujing[$Pic])
+					GUICtrlSetImage($Pic, "")
+					GUICtrlSetImage($Pic, $pic_lujing($Pic))
 				EndIf
 			Case $Icon2
 				If $Pic = UBound($pic_lujing, 1) - 1 Then
 					MsgBox(0, "", "图片已经是最后一张了")
 				Else
 					$Pic += 1
-					GUICtrlSetImage($Pic1, "")
-					GUICtrlSetImage($Pic1, $pic_lujing[$Pic])
+					GUICtrlSetImage($Pic, "")
+					GUICtrlSetImage($Pic, $pic_lujing($pic))
 				EndIf
 				
 		EndSwitch

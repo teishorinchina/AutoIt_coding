@@ -25,16 +25,16 @@ Func _main()
 					MsgBox(0, "", "图片为1")
 				Else
 					$Pic -= 1
-					GUICtrlSetImage($Pic1, "")
-					GUICtrlSetImage($Pic1, $pic_lujing[$Pic])
+					GUICtrlSetImage($Pic, "")
+					GUICtrlSetImage($Pic, $pic_lujing)
 				EndIf
 			Case $Icon2
 				If $Pic = UBound($pic_lujing, 1) - 1 Then
 					MsgBox(0, "", "图片已经是最后一张了")
 				Else
 					$Pic += 1
-					GUICtrlSetImage($Pic1, "")
-					GUICtrlSetImage($Pic1, $pic_lujing[$Pic])
+					GUICtrlSetImage($Pic, "")
+					GUICtrlSetImage($Pic, $pic_lujing)
 				EndIf
 				
 		EndSwitch
@@ -57,8 +57,7 @@ Func _pic_lu()
 	Local $i
 	For $i = 1 To UBound($a, 1) - 1
 		$a[$i] = @ScriptDir & "\pic\" & $a[$i]
-	Next
-	
+			Next
 	Return $a
 	
 EndFunc   ;==>_pic_lu
